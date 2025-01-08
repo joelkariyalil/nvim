@@ -109,19 +109,14 @@ return {
 					capabilities = capabilities,
 					cmd = { "gopls" },
 					filetypes = { "go", "gomod", "gowork", "goimpl" },
-					rootdir = util.root_pattern("go.work", "go.mod", ".git"),
+					rootdir = util.root_pattern("go.work", "go.mod"),
 					settings = {
 						gopls = {
 							completeUnimported = true,
 							usePlaceholders = true,
-							analysis = {
+							analyses = {
 								unusedparams = true,
 							},
-							completion = {
-								callSnippet = "Replace",
-							},
-							staticcheck = true,
-							gofumpt = true,
 						},
 					},
 				})
