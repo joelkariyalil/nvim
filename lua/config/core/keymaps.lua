@@ -11,6 +11,19 @@ vim.keymap.set("n", "<leader>tn", "<cmd>tabn<CR>")
 vim.keymap.set("n", "<leader>tp", "<cmd>tabp<CR>")
 vim.keymap.set("n", "<leader>tf", "<cmd>tabnew %<CR>")
 
+-- Theme switching keymaps (Ultra Dark Contrast Themes with White Text)
+vim.keymap.set("n", "<leader>th1", "<cmd>colorscheme vscode<CR>", { desc = "VS Code Ultra Dark + White Text" })
+vim.keymap.set("n", "<leader>th2", "<cmd>colorscheme tokyonight-night<CR>", { desc = "Tokyo Night Ultra Dark + White Text" })
+vim.keymap.set("n", "<leader>th3", "<cmd>colorscheme onedark<CR>", { desc = "Pure Black + White Text" })
+vim.keymap.set("n", "<leader>th4", "<cmd>colorscheme catppuccin-mocha<CR>", { desc = "Catppuccin Dark" })
+
+-- Quick reload current colorscheme
+vim.keymap.set("n", "<leader>thr", function()
+	local current_scheme = vim.g.colors_name or "vscode"
+	vim.cmd("colorscheme " .. current_scheme)
+	vim.notify("Reloaded colorscheme: " .. current_scheme)
+end, { desc = "Reload Current Theme" })
+
 function _G.set_terminal_keymaps()
 	local opts = { noremap = true }
 	vim.api.nvim_buf_set_keymap(0, "t", "<esc>", [[<C-\><C-n>]], opts)
