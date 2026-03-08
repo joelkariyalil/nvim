@@ -1,2 +1,3 @@
-## My Custom Config
-Custom Plugins Used
+# NVIM
+
+mmmm neovim
