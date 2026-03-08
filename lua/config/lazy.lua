@@ -29,6 +29,17 @@ require("lazy").setup({
         vim.list_extend(opts.ensure_installed, { "make" })
       end,
     },
+    {
+      "nvim-telescope/telescope.nvim",
+      dependencies = { "nvim-lua/plenary.nvim" },
+      config = function()
+        require("telescope").setup({
+          defaults = {
+            file_ignore_patterns = {},
+          },
+        })
+      end,
+    },
   },
   defaults = {
     lazy = false,
