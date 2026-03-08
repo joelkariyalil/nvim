@@ -24,4 +24,6 @@ require("lazy").setup({
   },
   install = { colorscheme = { "tokyonight" } },
   checker = { enabled = true },
+  -- Disable luarocks so lazy doesn't complain if you don't use rocks
+  rocks = { enabled = false },
 })
