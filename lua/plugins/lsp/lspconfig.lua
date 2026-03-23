@@ -59,6 +59,15 @@ return {
 
 		for server, config in pairs(opts.servers) do
 			config.capabilities = blink.get_lsp_capabilities(config.capabilities)
+			-- nvim-ufo: advertise foldingRange to LSP (e.g. gopls); see kevinhwang91/nvim-ufo README
+			config.capabilities = vim.tbl_deep_extend("force", config.capabilities, {
+				textDocument = {
+					foldingRange = {
+						dynamicRegistration = false,
+						lineFoldingOnly = true,
+					},
+				},
+			})
 			vim.lsp.config(server, config)
 		end
 
