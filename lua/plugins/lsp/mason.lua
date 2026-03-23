@@ -30,6 +30,7 @@ return {
 				"gopls",
 				"jdtls",
 				"terraformls",
+				"dockerls",
 			},
 		})
 

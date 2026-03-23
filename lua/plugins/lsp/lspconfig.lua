@@ -47,6 +47,8 @@ return {
 			jdtls = {},
 			-- terraform
 			terraformls = {},
+			-- docker
+			dockerls = {},
 			-- other
 			htmx = {},
 		},
